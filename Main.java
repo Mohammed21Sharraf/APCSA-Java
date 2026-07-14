@@ -2,22 +2,30 @@ import java.util.Scanner;
 
 class Main{
     public static void main(String[] args) {
-        Scanner scn = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         // What to enter:
-        // Enter a positive integer n (example: 60)
-        // Output will print prime factors separated by spaces
-        System.out.print("Enter a number (n): ");
-        int n = scn.nextInt();
+        // Enter two integers: low and high (example: 10 30)
+        // Program prints all prime numbers between low and high (inclusive)
+        System.out.print("Enter low: ");
+        int low = sc.nextInt();
 
-        for(int div = 2; div * div <= n; div++){
-            while(n % div == 0){
-                n = n / div;
-                System.out.print(div + " ");
+        System.out.print("Enter high: ");
+        int high = sc.nextInt();
+
+        for(int n = low; n <= high; n++){
+            if (n <= 1) continue; // 0 and 1 are not prime
+
+            int count = 0;
+            for(int div = 2; div * div <= n; div++){
+                if(n % div == 0){
+                    count++;
+                    break;
+                }
             }
-        }
-        if(n != 1){
-            System.out.print(n);
+            if(count == 0){
+                System.out.println(n);
+            }
         }
     }
 }
