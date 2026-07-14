@@ -1,34 +1,23 @@
 import java.util.Scanner;
 
-class Main {
+class Main{
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
 
         // What to enter:
-        // First enter t = number of test cases
-        // Then enter t numbers (n), one per line
-        System.out.print("Enter number of test cases (t): ");
-        int t = scn.nextInt();
+        // Enter a positive integer n (example: 60)
+        // Output will print prime factors separated by spaces
+        System.out.print("Enter a number (n): ");
+        int n = scn.nextInt();
 
-        for (int i = 1; i <= t; i++) {
-            System.out.print("Enter number " + i + ": ");
-            int n = scn.nextInt();
-
-            int count = 0;
-            for (int div = 2; div * div <= n; div++) {
-                if (n % div == 0) {
-                    count++;
-                    break;
-                }
+        for(int div = 2; div * div <= n; div++){
+            while(n % div == 0){
+                n = n / div;
+                System.out.print(div + " ");
             }
-
-            if (n <= 1) {
-                System.out.println("not prime");
-            } else if (count == 0) {
-                System.out.println("prime");
-            } else {
-                System.out.println("not prime");
-            }
+        }
+        if(n != 1){
+            System.out.print(n);
         }
     }
 }
