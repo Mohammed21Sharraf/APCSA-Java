@@ -4,15 +4,19 @@ class Main {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
 
-        System.out.print("Enter a number: ");
-        int num = scn.nextInt();
+        System.out.print("Enter marks: ");
+        int marks = scn.nextInt();
 
-        if (num > 10) {
-            System.out.println("Yes I'm Greater");
+        if (marks > 90) {
+            System.out.println("O");
+        } else if (marks > 80 && marks <= 90) {
+            System.out.println("A+");
+        } else if (marks > 70 && marks <= 80) {
+            System.out.println("A");
+        } else if (marks > 60 && marks <= 70) {
+            System.out.println("B");
         } else {
-            System.out.println("Sorry I feel bad");
+            System.out.println("C");
         }
-
-        scn.close();
     }
 }
