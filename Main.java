@@ -1,11 +1,21 @@
+import java.util.Scanner;
+
 class Main {
     public static void main(String[] args) {
-        System.out.println("My Maggie Recipe");
-        Maggie();
-    }
+        Scanner scn = new Scanner(System.in);
 
-    public static void Maggie(){
-        System.out.println("1.Boil water in pan");
-        System.out.println("2.Now add your special maggie recipe after this");
+        System.out.print("Enter a string: ");
+        String str = scn.nextLine();
+        System.out.println("The String is " + str);
+
+        System.out.print("Enter an integer number: ");
+        int num = scn.nextInt();
+        System.out.println("Number is " + num);
+
+        System.out.print("Enter a floating number: ");
+        float fnum = scn.nextFloat();
+        System.out.println("The floating num is " + fnum);
+
+        scn.close();
     }
 }
