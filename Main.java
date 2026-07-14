@@ -1,21 +1,35 @@
 import java.util.Scanner;
-
-class Main {
-    public static void main(String[] args) {
+class Main
+{
+    public static void main(String[] args)
+    {
         Scanner scn = new Scanner(System.in);
+        int number;
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        char choice;
 
-        // What to enter:
-        // Enter an integer n (example: 5)
-        // Program will calculate: 1 + 2 + 3 + ... + n
-        System.out.print("Enter a number (n): ");
+        do
+        {
+            System.out.print("Enter the number ");
+            number = scn.nextInt();
 
-        int n = scn.nextInt();
-        int sum = 0;
+            if(number > max)
+            {
+                max = number;
+            }
 
-        for (int i = 1; i <= n; i++) {
-            sum += i;
-        }
+            if(number < min)
+            {
+                min = number;
+            }
 
-        System.out.println("Sum till " + n + " is " + sum + ".");
+            System.out.print("Do you want to continue y/n? ");
+            choice = scn.next().charAt(0);
+
+        }while(choice=='y' || choice == 'Y');
+
+        System.out.println("Largest number: " + max);
+        System.out.println("Smallest number: " + min);
     }
 }
