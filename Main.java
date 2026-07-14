@@ -4,17 +4,14 @@ class Main {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
 
-        System.out.print("Enter a string: ");
-        String str = scn.nextLine();
-        System.out.println("The String is " + str);
-
-        System.out.print("Enter an integer number: ");
+        System.out.print("Enter a number: ");
         int num = scn.nextInt();
-        System.out.println("Number is " + num);
 
-        System.out.print("Enter a floating number: ");
-        float fnum = scn.nextFloat();
-        System.out.println("The floating num is " + fnum);
+        if (num > 10) {
+            System.out.println("Yes I'm Greater");
+        } else {
+            System.out.println("Sorry I feel bad");
+        }
 
         scn.close();
     }
